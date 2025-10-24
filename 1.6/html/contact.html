@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang cá nhân</title>
+    <link rel="stylesheet" type="text/css" href="../1.6.css">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="menu">
+      <a href="home.html"><img src="../img/avt.png"></a>
+      <a href="about.html">Giới thiệu</a>
+      <a href="plan.html">Kế hoạch học tập</a>
+      <a href="like.html">Sở thích</a>
+      <a href="contact.html">Liên hệ</a>
+    </div>
+  </div>
+    <main>
+      <div id="contact">
+        <h2>Liên hệ</h2>
+        <form id="formGopy" method="post"
+        action="https://script.google.com/macros/s/AKfycbx-RjkAAhLlk7IHQe3QrreulFyBS-mGgkbueELghBaprV8tGyHnV5M4sAv8HFtGtj5T/exec">
+          <fieldset>
+            <legend>Thông tin liên hệ</legend>
+            <label for="hoten">Họ tên:</label><br>
+            <input type="text" id="hoten" name="hoten" required><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="noidung">Nội dung góp ý:</label><br>
+            <textarea id="noidung" name="noidung" rows="5" cols="40" required></textarea><br><br>
+            <button type="submit">Gửi</button>
+          </fieldset>
+        </form>
+    </div>
+</body>
+</html>

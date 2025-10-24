@@ -1,0 +1,71 @@
+.hh-sheet {
+    box-shadow: 0 0 5px lightgray;
+    border-radius: 5px; 
+    padding: 10px; 
+    margin: 20px auto; 
+    max-width: 1000px; 
+}
+
+.hh-header {
+    border-bottom: 1px solid #ccc; 
+    margin-bottom: 5px;
+}
+
+.hh-company {
+    font-family: Impact; 
+    font-size: 30px; 
+    text-shadow: 0 0 1px lightgray;
+    color: black;
+}
+
+
+.hh-slogan {
+    font-size: 14px;
+    margin-top: -5px;
+    color: gray;
+}
+
+.hh-logo {
+    max-height: 80px;
+    width: auto;
+    object-fit: cover;
+}
+
+
+.navbar {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.navbar-nav .nav-link {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    font-size: 0.9rem;
+}
+
+.hh-cart .card-body ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: smaller;
+}
+
+.hh-card .card-header,
+.hh-cart .card-header {
+    background-color: transparent !important;
+    border-bottom: 1px solid #dee2e6;
+    padding: 0.5rem 0.5rem;
+    font-size: 0.95rem;
+}
+.hh-card .card-body {
+    padding: 0.5rem;
+}
+
+.hh-product .card-header {
+    background-color: #f8f9fa;
+    text-align: center;
+}
+.hh-product .card-footer {
+    text-align: center;
+    font-weight: bold;
+    background-color: transparent;
+}

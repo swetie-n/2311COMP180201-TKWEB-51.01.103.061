@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý danh sách sản phẩm</title>
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background-color: #fefffa;
+        }
+        table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background-color: #fff;
+        }
+        th, td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+        }
+        th {
+        background-color: #a77635;
+        color: white;
+        }
+        button {
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #a77635d0;
+        color: white;
+        cursor: pointer;
+        }
+        button:hover {
+        background-color: #6e4c15;
+        }
+        input[type="text"] {
+        padding: 5px;
+        width: 200px;
+        }
+        .form {
+        margin-bottom: 20px;
+        background-color: #ffe4c0;
+        padding: 15px;
+        border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form">
+        <h3>Thêm sản phẩm</h3>
+        <input type="text" id="newProduct" placeholder="Nhập tên sản phẩm">
+        <button onclick="add()">Thêm</button>
+    </div>
+
+    <h3>Quản lý danh sách sản phẩm</h3>
+    <table id="productTable">
+        <thead>
+        <tr>
+            <th>STT</th>
+            <th>Tên sản phẩm</th>
+            <th>Hành động</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script>
+        let products = ['Laptop', 'Điện thoại', 'Máy tính bảng'];
+        function displayProducts() {
+        const tbody = document.querySelector('#productTable tbody');
+        tbody.innerHTML = '';
+        products.forEach((product, index) => {
+            const tr = document.createElement('tr');
+            const stt = document.createElement('td');
+            stt.textContent = index + 1;
+            tr.appendChild(stt);
+            const tensp = document.createElement('td');
+            tensp.textContent = product;
+            tr.appendChild(tensp);
+
+            const tdAction = document.createElement('td');
+            const edit = document.createElement('button');
+            edit.textContent = 'Sửa';
+            edit.onclick = () => {
+            const newName = prompt('Nhập tên sản phẩm mới:', product);
+            if(newName && newName.trim() !== '') {
+                products[index] = newName.trim();
+                displayProducts();
+            }
+            };
+
+            tdAction.appendChild(edit);
+            const del = document.createElement('button');
+            del.textContent = 'Xoá';
+            del.style.marginLeft = '5px';
+            del.onclick = () => {
+            products.splice(index, 1); 
+            displayProducts();
+            };
+
+            tdAction.appendChild(del);
+            tr.appendChild(tdAction);
+            tbody.appendChild(tr);
+        });
+        }
+
+        function add() {
+        const input = document.getElementById('newProduct');
+        const name = input.value.trim();
+        if(name === '') {
+            alert('Vui lòng nhập tên sản phẩm');
+            return;
+        }
+        products.push(name);
+        input.value = '';
+        displayProducts();
+        }
+        displayProducts();
+    </script>
+</body>
+</html>
